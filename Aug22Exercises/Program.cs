@@ -1,24 +1,36 @@
-﻿namespace Aug22Exercises
+﻿using System.Collections;
+namespace Aug22Exercises
 {
+ 
     internal class Program
     {
         static void Main(string[] args)
         {
 
-            int n;
-            Console.WriteLine("enter size");
-            n=Convert.ToInt32(Console.ReadLine());
-            int[] arr = new int[n];
-            Console.WriteLine("Enter the numbers");
-            for(int i=0;i<arr.Length; i++)
+            var a = new ArrayList();
+            int k;
+            Console.WriteLine("Enter 5 numbers");
+           for(int i = 0; i < 5; i++)
             {
-                arr[i] = Convert.ToInt32(Console.ReadLine());
+                k=Convert.ToInt32(Console.ReadLine());
+                a.Add(k);
             }
-            for(int i = 0; i < arr.Length; i++)
+            Console.WriteLine("Enter number to be removed");
+            int kk;
+            kk= Convert.ToInt32(Console.ReadLine());
+            a.Remove(kk);
+            Console.WriteLine("removed"+" "+kk);
+            Console.WriteLine("Array after removed");
+            for (int i = 0; i < a.Count; i++)
             {
-                Console.Write("element-{0}:{1}\n",i,arr[i]);
+                Console.WriteLine(a[i]);
             }
+            int p=a.Count;
+            Console.WriteLine("Number of elements in array");
+            Console.WriteLine("Count"+" "+p);
             Console.ReadLine();
+
+
 
         }
     }
