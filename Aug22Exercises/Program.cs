@@ -5,21 +5,26 @@
         static void Main(string[] args)
         {
 
-            int n;
-            Console.WriteLine("enter size");
-            n=Convert.ToInt32(Console.ReadLine());
-            int[] arr = new int[n];
-            Console.WriteLine("Enter the numbers");
-            for(int i=0;i<arr.Length; i++)
+            List<float> K = new List<float> { 0.01f, 0.93f, 9.3f };
+            float[] arr = new float[K.Count];
+            for (int i = 0; i < K.Count; i++)
             {
-                arr[i] = Convert.ToInt32(Console.ReadLine());
+                arr[i] = K[i];
             }
-            for(int i = 0; i < arr.Length; i++)
+            Array.Sort(arr);
+            Console.WriteLine("Ascending Order");
+            foreach (float f in arr)
             {
-                Console.Write("element-{0}:{1}\n",i,arr[i]);
+                Console.WriteLine(f);
+            }
+            Array.Reverse(arr);
+            Console.WriteLine("Descending Order");
+            foreach (float f in arr)
+            {
+                Console.WriteLine(f);
             }
             Console.ReadLine();
-
         }
     }
+       
 }
