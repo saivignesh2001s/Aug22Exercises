@@ -14,12 +14,12 @@
             {
                 arr[i] = Convert.ToInt32(Console.ReadLine());
             }
-            for(int i = 0; i < arr.Length; i++)
-            {
-                Console.Write("element-{0}:{1}\n",i,arr[i]);
+            int sum = 0;
+            for (int i = 0; i < arr.Length; i++) {
+                sum += arr[i];
+                Console.WriteLine("sum after element {0}:{1}", i, sum);
             }
             Console.ReadLine();
-
         }
     }
 }
