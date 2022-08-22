@@ -1,23 +1,28 @@
-﻿namespace Aug22Exercises
+﻿using System.Collections;
+namespace Aug22Exercises
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            Queue q = new Queue(10, 2);//FIFO--First in first out
+            q.Enqueue(45);
+            q.Enqueue(4567.45f);
+            q.Enqueue(33);
+            //object a2=q.Dequeue();//45
+            //Console.WriteLine(a2);
 
-            int n;
-            Console.WriteLine("enter size");
-            n=Convert.ToInt32(Console.ReadLine());
-            int[] arr = new int[n];
-            Console.WriteLine("Enter the numbers");
-            for(int i=0;i<arr.Length; i++)
+            q.Peek();
+            Console.WriteLine("Before trimming=" + q.Count);
+            q.TrimToSize();
+            Console.WriteLine("After trimming");
+            Console.WriteLine(q.Count);
+            Console.WriteLine("Q elements are ");
+            foreach (var item in q)
             {
-                arr[i] = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine(item);
             }
-            for(int i = 0; i < arr.Length; i++)
-            {
-                Console.Write("element-{0}:{1}\n",i,arr[i]);
-            }
+
             Console.ReadLine();
 
         }
