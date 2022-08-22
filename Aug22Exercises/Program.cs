@@ -4,21 +4,17 @@
     {
         static void Main(string[] args)
         {
+            Dictionary<int, string> dic = new Dictionary<int, string>();
+            dic.Add(1, "Hitendra");
+            dic.Add(2, "Mohan");
+            dic.Add(3, "Simran");
 
-            int n;
-            Console.WriteLine("enter size");
-            n=Convert.ToInt32(Console.ReadLine());
-            int[] arr = new int[n];
-            Console.WriteLine("Enter the numbers");
-            for(int i=0;i<arr.Length; i++)
+            foreach (KeyValuePair<int, string> item in dic)
             {
-                arr[i] = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine(item.Key + " " + item.Value);
+
             }
-            for(int i = 0; i < arr.Length; i++)
-            {
-                Console.Write("element-{0}:{1}\n",i,arr[i]);
-            }
-            Console.ReadLine();
+            Console.ReadKey();
 
         }
     }
