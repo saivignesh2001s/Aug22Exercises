@@ -1,23 +1,24 @@
-﻿namespace Aug22Exercises
+﻿using System.Collections;
+namespace Aug22Exercises
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            Stack s=new Stack();
+            Console.WriteLine("Pushing");
+            for(int i=0;i<4;i++)
+            {
+                s.Push(i);
+            }
+           object a1=s.Pop();
+            Console.WriteLine("Popped Element {0} ", a1);
+            int cnt = s.Count;
+            Console.WriteLine("Count {0} ", cnt);
+            Console.WriteLine("Top element {0}",s.Peek());
 
-            int n;
-            Console.WriteLine("enter size");
-            n=Convert.ToInt32(Console.ReadLine());
-            int[] arr = new int[n];
-            Console.WriteLine("Enter the numbers");
-            for(int i=0;i<arr.Length; i++)
-            {
-                arr[i] = Convert.ToInt32(Console.ReadLine());
-            }
-            for(int i = 0; i < arr.Length; i++)
-            {
-                Console.Write("element-{0}:{1}\n",i,arr[i]);
-            }
+
+
             Console.ReadLine();
 
         }
