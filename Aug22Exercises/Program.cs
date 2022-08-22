@@ -14,10 +14,14 @@
             {
                 arr[i] = Convert.ToInt32(Console.ReadLine());
             }
+            int count = 0;
             for(int i = 0; i < arr.Length; i++)
             {
-                Console.Write("element-{0}:{1}\n",i,arr[i]);
+                if (arr[i] > 100)
+                    count++;
+                
             }
+            Console.Write("Number of elemnts greater than 100: {0}\n",count);
             Console.ReadLine();
 
         }
