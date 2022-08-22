@@ -5,20 +5,22 @@
         static void Main(string[] args)
         {
 
-            int n;
-            Console.WriteLine("enter size");
-            n=Convert.ToInt32(Console.ReadLine());
-            int[] arr = new int[n];
-            Console.WriteLine("Enter the numbers");
-            for(int i=0;i<arr.Length; i++)
+          
+            int[][] classroom = new int[4][];
+            classroom[0] = new int[] { 1, 25 };
+            classroom[1] = new int[] { 2, 26 };
+            classroom[2] = new int[] { 3, 28 };
+            classroom[3] = new int[] { 4, 29 };
+            foreach (int[] array in classroom)
             {
-                arr[i] = Convert.ToInt32(Console.ReadLine());
-            }
-            for(int i = 0; i < arr.Length; i++)
-            {
-                Console.Write("element-{0}:{1}\n",i,arr[i]);
+                foreach(int i in array)
+                {
+                    Console.Write("{0}\t",i);
+                }
+                Console.WriteLine("\n");
             }
             Console.ReadLine();
+
 
         }
     }
