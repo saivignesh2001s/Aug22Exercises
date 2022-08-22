@@ -5,21 +5,38 @@
         static void Main(string[] args)
         {
 
-            int n;
-            Console.WriteLine("enter size");
-            n=Convert.ToInt32(Console.ReadLine());
-            int[] arr = new int[n];
-            Console.WriteLine("Enter the numbers");
-            for(int i=0;i<arr.Length; i++)
-            {
-                arr[i] = Convert.ToInt32(Console.ReadLine());
-            }
-            for(int i = 0; i < arr.Length; i++)
-            {
-                Console.Write("element-{0}:{1}\n",i,arr[i]);
-            }
+            int[] arr = { 1, 2, 3 };
+            int m = arr.Length;
+            Console.Write(count(arr, m, 4));
             Console.ReadLine();
 
+
+
         }
+        static int count(int[] S, int m, int n)
+        {
+            // If n is 0 then there is 1 solution
+            // (do not include any coin)
+            if (n == 0)
+                return 1;
+
+            // If n is less than 0 then no
+            // solution exists
+            if (n < 0)
+                return 0;
+
+            // If there are no coins and n
+            // is greater than 0, then no
+            // solution exist
+            if (m <= 0)
+                return 0;
+
+            // count is sum of solutions (i)
+            // including S[m-1] (ii) excluding S[m-1]
+            return count(S, m - 1, n) +
+                count(S, m, n - S[m - 1]);
+        }
+
+
     }
 }
