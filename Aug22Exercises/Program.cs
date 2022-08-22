@@ -5,19 +5,24 @@
         static void Main(string[] args)
         {
 
-            int n;
+            int k;
             Console.WriteLine("enter size");
-            n=Convert.ToInt32(Console.ReadLine());
-            int[] arr = new int[n];
+            k=Convert.ToInt32(Console.ReadLine());
+            int[] arr = new int[k];
             Console.WriteLine("Enter the numbers");
             for(int i=0;i<arr.Length; i++)
             {
                 arr[i] = Convert.ToInt32(Console.ReadLine());
             }
-            for(int i = 0; i < arr.Length; i++)
+            Console.WriteLine("Enter n");
+            int n;
+            n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Reversed array");
+            for (int i = n - 1; i >= 0; i--)
             {
-                Console.Write("element-{0}:{1}\n",i,arr[i]);
+                Console.WriteLine(arr[i]);
             }
+
             Console.ReadLine();
 
         }
