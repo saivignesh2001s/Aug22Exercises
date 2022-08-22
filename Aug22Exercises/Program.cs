@@ -1,22 +1,27 @@
-﻿namespace Aug22Exercises
+﻿using System.Collections;
+namespace Aug22Exercises
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-
-            int n;
-            Console.WriteLine("enter size");
-            n=Convert.ToInt32(Console.ReadLine());
-            int[] arr = new int[n];
-            Console.WriteLine("Enter the numbers");
-            for(int i=0;i<arr.Length; i++)
+            Hashtable h = new Hashtable();
+            h.Add(1, "Coffee");
+            h.Add(2, "Tea");
+            h.Add(3, "Boost");
+            h.Add(4, "horlicks");
+            IDictionaryEnumerator he= h.GetEnumerator();
+            Console.WriteLine("Using While loop");
+            while (he.MoveNext())
             {
-                arr[i] = Convert.ToInt32(Console.ReadLine());
+                Console.Write("{0}\t",he.Key);
+                Console.Write("{0}\n", he.Value);
             }
-            for(int i = 0; i < arr.Length; i++)
+            Console.WriteLine("Using for each loop");
+            foreach(DictionaryEntry values in h)
             {
-                Console.Write("element-{0}:{1}\n",i,arr[i]);
+                Console.Write("{0}\t", values.Key);
+                Console.Write("{0}\n", values.Value);
             }
             Console.ReadLine();
 
